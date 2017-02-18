@@ -84,8 +84,11 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+setopt no_share_history
 alias l='ls -ah'
+alias update=`sudo apt-get update`
+alias upgrade=`sudo apt-get upgrade`
+alias apti=`sudo apt-get install`
+alias aptr=`sudo apt-get remove`
 alias indigo=`source /opt/ros/indigo/setup.zsh`
 source /opt/ros/indigo/setup.zsh
-setopt no_share_history
- 
