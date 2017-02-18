@@ -86,9 +86,10 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 setopt no_share_history
 alias l='ls -ah'
-alias update=`sudo apt-get update`
-alias upgrade=`sudo apt-get upgrade`
-alias apti=`sudo apt-get install`
-alias aptr=`sudo apt-get remove`
-alias indigo=`source /opt/ros/indigo/setup.zsh`
+alias update='sudo apt-get update'
+alias upgrade='sudo apt-get upgrade'
+alias apti='sudo apt-get install'
+alias aptr='sudo apt-get remove'
+alias indigo='source /opt/ros/indigo/setup.zsh'
+alias tf='cd /var/tmp && rosrun tf view_frames && evince frames.pdf &'
 source /opt/ros/indigo/setup.zsh
