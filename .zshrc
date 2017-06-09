@@ -93,3 +93,7 @@ alias aptr='sudo apt-get remove'
 alias indigo='source /opt/ros/indigo/setup.zsh'
 alias tf='cd /var/tmp && rosrun tf view_frames && evince frames.pdf &'
 source /opt/ros/indigo/setup.zsh
+
+case $- in *i*)
+  if [ -z "$TMUX" ]; then exec tmux; fi;;
+esac
