@@ -22,6 +22,8 @@ alias apti='sudo apt-get install'
 alias aptr='sudo apt-get remove'
 alias kinetic='source /opt/ros/kinetic/setup.zsh'
 alias tf='cd /var/tmp && rosrun tf view_frames && evince frames.pdf &'
+alias del='rm -rf'
+alias internet='ping 8.8.8.8'
 
 source /opt/ros/kinetic/setup.zsh
 source ${DIR}/ros_install.zsh
