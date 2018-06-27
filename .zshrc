@@ -26,8 +26,5 @@ alias del='rm -rf'
 alias internet='ping 8.8.8.8'
 
 source /opt/ros/kinetic/setup.zsh
-source ${DIR}/ros_install.zsh
+source ~/envconfig/ros_install.zsh
 
-case $- in *i*)
-  if [ -z "$TMUX" ]; then exec tmux; fi;;
-esac
