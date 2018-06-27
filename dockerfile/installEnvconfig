@@ -1,0 +1,11 @@
+FROM ubuntu:xenial
+
+RUN apt-get update
+RUN apt-get install -y curl \
+                    wget \
+                    git \
+                    vim
+
+RUN apt-get install -y sudo
+RUN useradd -m toor && echo "toor:toor" | chpasswd && adduser toor sudo
+USER toor
