@@ -25,6 +25,23 @@ yes_or_no () {
     fi
 }
 
+#the first args is where is the current one
+#and the second one is the name of it in envconfig
+sym_link() {
+    if [ -f $1 ]; then
+        mv $1 $1.back
+    fi
+    ln -s "${DIR}/$2" $1
+}
+
+
+echo "Do you want to install and configure GIT?"
+yes_or_no
+if [ $? == 0 ]
+then
+    sudo apt install -y git
+    sym_link ~/.gitconfig .gitconfig
+
 echo "Do you want to install zsh & oh my zsh?"
 yes_or_no
 if [ $? == 0 ]
