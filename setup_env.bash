@@ -49,3 +49,17 @@ then
     ln -s "${DIR}/.tmux.conf" ~/.tmux.conf
     echo "tmux config: Done!"
 fi
+
+echo "Should we personalize FireFox?"
+yes_or_no
+if [ $? == 0 ]
+then
+    FFDIR=~/.mozilla/firefox/*.default/chrome
+    if [ -f ${FFDIR}/userChrome.css ]; then
+        mv ${FFDIR}/userChrome ${FFDIR}/userChrome.css.back
+    fi
+    cd ~/.mozilla/firefox/*.default
+    mkdir chrome
+    ln -s "${DIR}/.tmux.conf" ${FFDIR}/userChrome.css
+fi
+
