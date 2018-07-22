@@ -27,4 +27,5 @@ alias internet='ping 8.8.8.8'
 
 source /opt/ros/kinetic/setup.zsh
 source ~/envconfig/ros_install.zsh
+source ~/.custom.zsh
 
