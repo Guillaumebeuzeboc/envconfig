@@ -2,6 +2,10 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
+
+autoload bashcompinit
+bashcompinit
+
 export ZSH=${HOME}/.oh-my-zsh
 
 ZSH_THEME="afowler"
@@ -27,4 +31,5 @@ alias internet='ping 8.8.8.8'
 
 source /opt/ros/kinetic/setup.zsh
 source ~/envconfig/ros_install.zsh
+source ~/.custom.zsh
 

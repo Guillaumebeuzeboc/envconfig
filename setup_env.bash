@@ -25,16 +25,32 @@ yes_or_no () {
     fi
 }
 
+#the first args is where is the current one
+#and the second one is the name of it in envconfig
+sym_link() {
+    if [ -f $1 ]; then
+        mv $1 $1.back
+    fi
+    ln -s "${DIR}/$2" $1
+}
+
+
+echo "Do you want to install and configure GIT?"
+yes_or_no
+if [ $? == 0 ]
+then
+    sudo apt install -y git
+    sym_link ~/.gitconfig .gitconfig
+fi
+
 echo "Do you want to install zsh & oh my zsh?"
 yes_or_no
 if [ $? == 0 ]
 then
-    sudo apt install zsh curl
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-    if [ -f ~/.zshrc ]; then
-        mv ~/.zshrc ~/.zshrc.back
-    fi
-    ln -s "${DIR}/.zshrc" ~/.zshrc
+    sudo apt install -y zsh curl
+    sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sed '/\s*env\s\s*zsh\s*/d')"
+    sym_link ~/.zshrc .zshrc
+    touch ~/.custom.zsh
     echo "zsh config: Done!"
 fi
 
@@ -42,10 +58,20 @@ echo "Do you want to install tmux?"
 yes_or_no
 if [ $? == 0 ]
 then
-    sudo apt install tmux
-    if [ -f ~/.tmux.conf ]; then
-        mv ~/.tmux.conf ~/.tmux.conf.back
-    fi
-    ln -s "${DIR}/.tmux.conf" ~/.tmux.conf
+    sudo apt install -y tmux xclip
+    sym_link ~/.tmux.conf .tmux.conf
     echo "tmux config: Done!"
 fi
+
+echo "Should we personalize userChrome of FireFox?"
+yes_or_no
+if [ $? == 0 ]
+then
+    sudo apt install -y firefox
+    echo "Please enter the absolute path of the FF user (~/.mozilla/firefox/SOMETHING.default):"
+    read
+    FFDIR=$REPLY/chrome
+    mkdir $FFDIR
+    sym_link $FFDIR/userChrome.css userChrome.css
+fi
+
