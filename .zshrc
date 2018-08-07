@@ -20,14 +20,18 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 setopt no_share_history
 alias l='ls -ah'
+alias ll='ls -alh'
+alias ld='du -h -d 1'
 alias update='sudo apt-get update'
 alias upgrade='sudo apt-get upgrade'
 alias apti='sudo apt-get install'
 alias aptr='sudo apt-get remove'
-alias kinetic='source /opt/ros/kinetic/setup.zsh'
-alias tf='cd /var/tmp && rosrun tf view_frames && evince frames.pdf &'
+alias xc='xclip -selection clipboard'
 alias del='rm -rf'
 alias internet='ping 8.8.8.8'
+alias Ginternet='ping www.google.com'
+#ROS
+alias tf='cd /var/tmp && rosrun tf view_frames && okular frames.pdf &'
 
 source /opt/ros/kinetic/setup.zsh
 source ~/envconfig/ros_install.zsh
