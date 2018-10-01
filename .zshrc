@@ -30,6 +30,8 @@ alias xc='xclip -selection clipboard'
 alias del='rm -rf'
 alias internet='ping 8.8.8.8'
 alias Ginternet='ping www.google.com'
+alias s='sudo'
+alias del='rm -rf'
 #ROS
 alias tf='cd /var/tmp && rosrun tf view_frames && okular frames.pdf &'
 
