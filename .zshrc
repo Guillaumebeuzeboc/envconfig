@@ -36,6 +36,9 @@ alias del='rm -rf'
 alias tf='cd /var/tmp && rosrun tf view_frames && okular frames.pdf &'
 
 source /opt/ros/kinetic/setup.zsh
+
 source ~/envconfig/ros_install.zsh
+source ~/envconfig/beuzclone.zsh
+
 source ~/.custom.zsh
 
