@@ -34,6 +34,8 @@ alias s='sudo'
 alias del='rm -rf'
 #ROS
 alias tf='cd /var/tmp && rosrun tf view_frames && okular frames.pdf &'
+#translate shell
+alias trans='~/envconfig/install/trans'
 
 source /opt/ros/kinetic/setup.zsh
 

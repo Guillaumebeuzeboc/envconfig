@@ -75,3 +75,12 @@ then
     sym_link $FFDIR/userChrome.css userChrome.css
 fi
 
+echo "Do you want to install translate-shell?"
+yes_or_no
+if [ $? == 0 ]
+then
+    sudo apt install -y wget gawk
+    mkdir ${DIR}/install
+    wget git.io/trans -P ${DIR}/install
+    chmod +x ${DIR}/install/trans
+fi
