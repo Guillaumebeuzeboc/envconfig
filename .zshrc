@@ -15,6 +15,7 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 export EDITOR='vim'
+export WWW_HOME='google.co.fr'
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
@@ -32,6 +33,7 @@ alias internet='ping 8.8.8.8'
 alias Ginternet='ping www.google.com'
 alias s='sudo'
 alias del='rm -rf'
+alias szsh='source ~/.zshrc'
 #ROS
 alias tf='cd /var/tmp && rosrun tf view_frames && okular frames.pdf &'
 #translate shell
