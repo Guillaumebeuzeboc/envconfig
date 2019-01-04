@@ -34,6 +34,8 @@ sym_link() {
     ln -s "${DIR}/$2" $1
 }
 
+sudo apt update
+sudo apt upgrade -y
 
 echo "Do you want to install and configure GIT?"
 yes_or_no
@@ -83,4 +85,15 @@ then
     mkdir ${DIR}/install
     wget git.io/trans -P ${DIR}/install
     chmod +x ${DIR}/install/trans
+fi
+
+echo "Do you want to install ag?"
+yes_or_no
+if [ $? == 0 ]
+then
+    sudo apt install -y automake pkg-config libpcre3-dev zlib1g-dev liblzma-dev autotools-dev
+    pushd /tmp; git clone https://github.com/ggreer/the_silver_searcher.git; cd the_silver_searcher
+    ./build.sh
+    sudo make install
+    popd
 fi
