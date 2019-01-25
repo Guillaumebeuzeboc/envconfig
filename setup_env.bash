@@ -36,6 +36,7 @@ sym_link() {
 
 sudo apt update
 sudo apt upgrade -y
+sudo apt install vim
 
 echo "Do you want to install and configure GIT?"
 yes_or_no
@@ -91,7 +92,7 @@ echo "Do you want to install ag?"
 yes_or_no
 if [ $? == 0 ]
 then
-    sudo apt install -y automake pkg-config libpcre3-dev zlib1g-dev liblzma-dev autotools-dev
+    sudo apt install -y automake pkg-config libpcre3-dev zlib1g-dev liblzma-dev autotools-dev clang-format
     pushd /tmp; git clone https://github.com/ggreer/the_silver_searcher.git; cd the_silver_searcher
     ./build.sh
     sudo make install
