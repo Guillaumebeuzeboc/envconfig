@@ -98,3 +98,11 @@ then
     sudo make install
     popd
 fi
+
+echo "Do you want to install some fancy desktop tools?"
+yes_or_no
+if [ $? == 0 ]
+then
+    TO_INSTALL=`cat tools_to_install`
+    sudo apt install -y $TO_INSTALL
+fi
