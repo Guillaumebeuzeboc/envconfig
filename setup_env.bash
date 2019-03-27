@@ -50,6 +50,7 @@ echo "Do you want to install zsh & oh my zsh?"
 yes_or_no
 if [ $? == 0 ]
 then
+    USE_ZSH=1
     sudo apt install -y zsh curl
     sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sed '/\s*env\s\s*zsh\s*/d')"
     sym_link ~/.zshrc .zshrc
@@ -103,6 +104,16 @@ echo "Do you want to install some fancy desktop tools?"
 yes_or_no
 if [ $? == 0 ]
 then
+    ## install regular debian pkgs
     TO_INSTALL=`cat tools_to_install`
     sudo apt install -y $TO_INSTALL
+
+    "source ~/envconfig/.graphic.zsh" >> ~/.custom.zsh
+
+    if [ ${USE_ZSH} == 1 ]
+    then
+        ## install gif_recorder
+        pushd utils ; make
+        popd
+    fi
 fi
