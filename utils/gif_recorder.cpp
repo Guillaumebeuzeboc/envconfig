@@ -8,19 +8,17 @@
 #include<unistd.h>
 #include<string>
 #include<sstream>
+#include <libnotify/notify.h>
 
 // original from [https://bbs.archlinux.org/viewtopic.php?id=85378 Select a screen area with mouse and return the geometry of this area? / Programming & Scripting / Arch Linux Forums]
-// build with (Ubuntu 16.04):
-// gcc select_screen.c -o select_screen -lX11
+// build with (Ubuntu 18.04):
 
 const std::string currentDateTime() {
     time_t     now = time(0);
     struct tm  tstruct;
     char       buf[80];
     tstruct = *localtime(&now);
-    // Visit http://en.cppreference.com/w/cpp/chrono/c/strftime
-    // for more information about date/time format
-    strftime(buf, sizeof(buf), "%Y-%m-%d.%X", &tstruct);
+    strftime(buf, sizeof(buf), "%Y-%m-%d.%H-%M-%S", &tstruct);
 
     return buf;
 }
@@ -33,10 +31,15 @@ void printHelper(){
 int main(int argc, char ** argv)
 {
   int duration_record = 3;
+
   if(argc > 2 ){
       duration_record = atoi(argv[1]);
   }
+
   std::cout<< "Please select a zone to record a Gif" << std::endl;
+
+  notify_init("Gif_recorder");
+
   int rx = 0, ry = 0, rw = 0, rh = 0;
   int rect_x = 0, rect_y = 0, rect_w = 0, rect_h = 0;
   int btn_pressed = 0, done = 0;
@@ -69,7 +72,6 @@ int main(int argc, char ** argv)
                  GCFunction | GCForeground | GCBackground | GCSubwindowMode,
                  &gcval);
 
-  /* this XGrab* stuff makes XPending true ? */
   if ((XGrabPointer
        (disp, root, False,
         ButtonMotionMask | ButtonPressMask | ButtonReleaseMask, GrabModeAsync,
@@ -141,14 +143,12 @@ int main(int argc, char ** argv)
 
   XCloseDisplay(disp);
 
-  const  std::string kill_notification("; sleep 3 ; killall notify-osd");
-
   std::stringstream ss_notification;
-  ss_notification << "notify-send -u normal -t 2000 Gif_recorder \"starting the record in 3 secs\"" << kill_notification;
-  std::string notification(ss_notification.str());
+  NotifyNotification* notification = notify_notification_new ("Gif recorder", "starting the record in 3 secs" , "video-mp4");
+  notify_notification_set_timeout(notification, 1500);
 
   std::stringstream ss_filename;
-  ss_filename << "/home/beuzeboc/Pictures/gifs/gif" << currentDateTime() << ".gif";
+  ss_filename << "~/Pictures/gif" << currentDateTime() << ".gif";
   std::string filename(ss_filename.str());
 
   std::stringstream ss_cmd;
@@ -156,12 +156,13 @@ int main(int argc, char ** argv)
   std::string cmd = ss_cmd.str();
 
   std::stringstream ss_notification_out;
-  ss_notification_out << "notify-send -u normal -t 2000 Gif_recorder " << "\"gif_sucessfully recorded:  " << filename << "\"" << kill_notification;
-  std::string notification_out = ss_notification_out.str();
+  ss_notification_out << "gif_sucessfully recorded:  " << filename;
+  NotifyNotification* notification_out = notify_notification_new ("Gif recorder", ss_notification_out.str().c_str() , "checkmark");
+  notify_notification_set_timeout(notification_out, 3000);
 
-  system(notification.c_str());
+  notify_notification_show(notification, 0);
   system(cmd.c_str());
-  system(notification_out.c_str());
+  notify_notification_show(notification_out, 0);
   std::cout << "Gif " << filename << " sucessfully recorded!" << std::endl;
 
   return EXIT_SUCCESS;
