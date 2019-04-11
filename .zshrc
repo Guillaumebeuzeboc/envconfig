@@ -42,6 +42,7 @@ alias trans='~/envconfig/install/trans'
 
 source ~/envconfig/ros_install.zsh
 source ~/envconfig/beuzclone.zsh
+source ~/envconfig/nordvpn.zsh
 
 source ~/.custom.zsh
 
