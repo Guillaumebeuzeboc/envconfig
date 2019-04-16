@@ -47,6 +47,7 @@ then
 fi
 
 echo "Do you want to install zsh & oh my zsh?"
+USE_ZSH=0
 yes_or_no
 if [ $? == 0 ]
 then
@@ -106,9 +107,10 @@ if [ $? == 0 ]
 then
     ## install regular debian pkgs
     TO_INSTALL=`cat tools_to_install`
+    sudo apt install -y build-essential
     sudo apt install -y $TO_INSTALL
 
-    "source ~/envconfig/.graphic.zsh" >> ~/.custom.zsh
+    echo "source ~/envconfig/.graphic.zsh" >> ~/.custom.zsh
 
     if [ ${USE_ZSH} == 1 ]
     then
