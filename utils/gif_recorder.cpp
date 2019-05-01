@@ -32,7 +32,7 @@ int main(int argc, char ** argv)
 {
   int duration_record = 3;
 
-  if(argc > 2 ){
+  if(argc > 1 ){
       duration_record = atoi(argv[1]);
   }
 

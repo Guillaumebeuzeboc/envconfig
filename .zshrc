@@ -39,6 +39,8 @@ alias szsh='source ~/.zshrc'
 alias tf='cd /var/tmp && rosrun tf view_frames && okular frames.pdf &'
 #translate shell
 alias trans='~/envconfig/install/trans'
+#gif_recorder
+alias gif_recorder='~/envconfig/utils/gif_recorder'
 
 source ~/envconfig/ros_install.zsh
 source ~/envconfig/beuzclone.zsh
