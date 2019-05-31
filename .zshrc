@@ -45,6 +45,7 @@ alias gif_recorder='~/envconfig/utils/gif_recorder'
 source ~/envconfig/ros_install.zsh
 source ~/envconfig/beuzclone.zsh
 source ~/envconfig/nordvpn.zsh
+source ~/envconfig/serial_monitor.zsh
 
 source ~/.custom.zsh
 
