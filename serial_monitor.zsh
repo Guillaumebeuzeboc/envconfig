@@ -1,4 +1,4 @@
-serial_listenner(){
+serial_monitor(){
     #socat stdio $(/dev/$1) | grep -v $("$2")
     if [ "$#" -eq 2 ]; then
     	socat stdio $1 | grep -v "$2"
