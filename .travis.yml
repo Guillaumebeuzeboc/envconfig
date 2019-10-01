@@ -4,4 +4,5 @@ language: generic
 
 before_install:
   - docker pull ubuntu:bionic
-  - printf 'y\ny\ny\ny\n~/.mozilla/firefox/\ny\ny\ny\n' > bash setup_env.bash
+  - cd dockerfile && make
+  - cd dockerfile && make travis 
