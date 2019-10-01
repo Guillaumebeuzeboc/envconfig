@@ -5,4 +5,4 @@ language: generic
 before_install:
   - docker pull ubuntu:bionic
   - cd dockerfile && make
-  - cd dockerfile && make travis 
+  - make travis
