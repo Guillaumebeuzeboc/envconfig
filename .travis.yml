@@ -1,0 +1,8 @@
+services:
+  - docker
+language: generic
+
+before_install:
+  - docker pull ubuntu:bionic
+  - cd dockerfile && make
+  - make travis

@@ -8,4 +8,5 @@ RUN apt-get install -y curl \
 
 RUN apt-get install -y sudo
 RUN useradd -m toor && echo "toor:toor" | chpasswd && adduser toor sudo
+RUN echo "toor ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers
 USER toor
