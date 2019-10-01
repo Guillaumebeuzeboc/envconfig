@@ -1,0 +1,7 @@
+services:
+  - docker
+language: generic
+
+before_install:
+  - docker pull ubuntu:bionic
+  - printf 'y\ny\ny\ny\n~/.mozilla/firefox/\ny\ny\ny\n' > ./setup_env.bash
