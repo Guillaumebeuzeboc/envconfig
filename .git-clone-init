@@ -1,0 +1,4 @@
+case "$url" in
+  *@github.com:*  ) email="guillaume.beuzeboc@gmail.com";    name="Guillaumebeuzeboc";;
+  *) email="guillaume.beuzeboc@gmail.com"; name="Guillaumebeuzeboc";;
+esac

@@ -44,6 +44,9 @@ if [ $? == 0 ]
 then
     sudo apt install -y git
     sym_link ~/.gitconfig .gitconfig
+    sym_link ~/.git-clone-init .git-clone-init
+    mkdir -p ~/.git-templates/hooks
+    sym_link ~/.git-templates/hooks/post-checkout post-checkout
 fi
 
 echo "Do you want to install zsh & oh my zsh?"

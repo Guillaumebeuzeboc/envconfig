@@ -19,3 +19,5 @@
 
 [cola]
 	spellcheck = false
+[init]
+	templatedir = /home/guillaume/.git-templates
