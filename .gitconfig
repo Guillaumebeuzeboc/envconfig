@@ -19,5 +19,6 @@
 
 [cola]
 	spellcheck = false
+	theme = flat-dark-blue
 [init]
 	templatedir = /home/guillaume/.git-templates
