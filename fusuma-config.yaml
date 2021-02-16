@@ -1,0 +1,18 @@
+swipe:
+  3:
+    left:
+      command: 'xdotool key super+Right' # History forward
+    right:
+      command: 'xdotool key super+Left' # History back
+pinch:
+  2:
+    in:
+      command: 'xdotool keydown ctrl click 4 keyup ctrl' # Zoom in
+    out:
+      command: 'xdotool keydown ctrl click 5 keyup ctrl' # Zoom out
+threshold:
+  pinch: 0.5
+  swipe: 0.01
+interval:
+  swipe: 0.75
+  pinch: 0.1
