@@ -20,7 +20,8 @@
     ff = no
 [cola]
 	spellcheck = false
+	theme = flat-dark-blue
 [init]
 	templatedir = /home/guillaume/.git-templates
 [core]
-	autocrlf = true
+	autocrlf = false
