@@ -24,4 +24,4 @@
 [init]
 	templatedir = /home/guillaume/.git-templates
 [core]
-	autocrlf = false
+	autocrlf = true
