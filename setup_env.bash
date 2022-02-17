@@ -55,7 +55,7 @@ yes_or_no
 if [ $? == 0 ]
 then
     USE_ZSH=1
-    sudo apt install -y zsh curl
+    sudo apt install -y zsh curl git-lfs
     sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sed '/\s*env\s\s*zsh\s*/d')"
     sym_link ~/.zshrc .zshrc
     touch ~/.custom.zsh
