@@ -46,7 +46,6 @@ alias dos2unix_everything='find . -type f -print0 | xargs -0 dos2unix'
 
 source ~/envconfig/ros_install.zsh
 source ~/envconfig/beuzclone.zsh
-source ~/envconfig/nordvpn.zsh
 source ~/envconfig/serial_monitor.zsh
 
 source ~/.custom.zsh
