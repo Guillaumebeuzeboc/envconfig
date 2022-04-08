@@ -44,6 +44,9 @@ alias gif_recorder='~/envconfig/utils/gif_recorder'
 #dos2unix
 alias dos2unix_everything='find . -type f -print0 | xargs -0 dos2unix'
 
+# remove any snap/multipass vm
+alias nuke-multipass='multipass stop --all && multipass delete --all && multipass purge && sudo snap restart multipass'
+
 source ~/envconfig/ros_install.zsh
 source ~/envconfig/beuzclone.zsh
 source ~/envconfig/serial_monitor.zsh
