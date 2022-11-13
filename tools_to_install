@@ -6,3 +6,5 @@ byzanz
 libnotify-dev
 guake
 meld
+ripgrep
+fd-find

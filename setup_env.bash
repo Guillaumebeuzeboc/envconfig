@@ -93,17 +93,6 @@ then
     chmod +x ${DIR}/install/trans
 fi
 
-echo "Do you want to install ag?"
-yes_or_no
-if [ $? == 0 ]
-then
-    sudo apt install -y automake pkg-config libpcre3-dev zlib1g-dev liblzma-dev autotools-dev clang-format
-    pushd /tmp; git clone https://github.com/ggreer/the_silver_searcher.git; cd the_silver_searcher
-    ./build.sh
-    sudo make install
-    popd
-fi
-
 echo "Do you want to install some fancy desktop tools?"
 yes_or_no
 if [ $? == 0 ]
