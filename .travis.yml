@@ -3,6 +3,6 @@ services:
 language: generic
 
 before_install:
-  - docker pull ubuntu:focal
+  - docker pull ubuntu:jammy
   - cd dockerfile && make
   - make travis
