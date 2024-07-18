@@ -57,6 +57,7 @@ alias nuke-multipass='multipass stop --all && multipass delete --all && multipas
 source ~/envconfig/ros_install.zsh
 source ~/envconfig/beuzclone.zsh
 source ~/envconfig/serial_monitor.zsh
+source ~/envconfig/snapcraft.zsh
 source ~/envconfig/super_cd.zsh
 source ~/envconfig/ignore-man-in-the-middle.zsh
 
