@@ -36,7 +36,6 @@ alias del='rm -rf'
 alias internet='ping 8.8.8.8'
 alias Ginternet='ping www.google.com'
 alias s='sudo'
-alias del='rm -rf'
 alias fixsshtmux='export $(tmux showenv SSH_AUTH_SOCK)' # Need this first: ln -sf $SSH_AUTH_SOCK ~/.ssh/ssh_auth_sock
 alias szsh='source ~/.zshrc'
 #ROS
@@ -58,6 +57,7 @@ alias nuke-multipass='multipass stop --all && multipass delete --all && multipas
 source ~/envconfig/ros_install.zsh
 source ~/envconfig/beuzclone.zsh
 source ~/envconfig/serial_monitor.zsh
+source ~/envconfig/super_cd.zsh
 source ~/envconfig/ignore-man-in-the-middle.zsh
 
 source ~/.custom.zsh
