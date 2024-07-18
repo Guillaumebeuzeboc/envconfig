@@ -6,6 +6,10 @@
 autoload bashcompinit
 bashcompinit
 
+plugins=(
+  zsh-syntax-highlighting
+)
+
 export ZSH=${HOME}/.oh-my-zsh
 
 ZSH_THEME="afowler"
@@ -54,6 +58,7 @@ alias nuke-multipass='multipass stop --all && multipass delete --all && multipas
 source ~/envconfig/ros_install.zsh
 source ~/envconfig/beuzclone.zsh
 source ~/envconfig/serial_monitor.zsh
+source ~/envconfig/ignore-man-in-the-middle.zsh
 
 source ~/.custom.zsh
 
