@@ -38,6 +38,7 @@ alias Ginternet='ping www.google.com'
 alias s='sudo'
 alias fixsshtmux='export $(tmux showenv SSH_AUTH_SOCK)' # Need this first: ln -sf $SSH_AUTH_SOCK ~/.ssh/ssh_auth_sock
 alias szsh='source ~/.zshrc'
+alias gs='git status'
 #ROS
 alias tf='cd /var/tmp && rosrun tf view_frames && okular frames.pdf &'
 #translate shell
@@ -50,7 +51,8 @@ alias dos2unix_everything='find . -type f -print0 | xargs -0 dos2unix'
 # snap
 alias snappy-debug='sudo sysctl -w kernel.printk_ratelimit=0 ; journalctl --follow | grep audit'
 
-
+# KDE
+alias restart-plasma='plasmashell --replace &'
 # remove any snap/multipass vm
 alias nuke-multipass='multipass stop --all && multipass delete --all && multipass purge && sudo snap restart multipass'
 
@@ -60,6 +62,7 @@ source ~/envconfig/serial_monitor.zsh
 source ~/envconfig/snapcraft.zsh
 source ~/envconfig/super_cd.zsh
 source ~/envconfig/ignore-man-in-the-middle.zsh
+source ~/envconfig/remote_snapcraft.zsh
 
 source ~/.custom.zsh
 
