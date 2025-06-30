@@ -47,6 +47,9 @@ alias trans='~/envconfig/install/trans'
 alias gif_recorder='~/envconfig/utils/gif_recorder'
 #dos2unix
 alias dos2unix_everything='find . -type f -print0 | xargs -0 dos2unix'
+#Python
+alias create_venv='python3 -m venv .venv'
+alias activate_venv='. .venv/bin/activate'
 
 # snap
 alias snappy-debug='sudo sysctl -w kernel.printk_ratelimit=0 ; journalctl --follow | grep audit'

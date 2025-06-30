@@ -107,6 +107,7 @@ then
     if [ ${USE_ZSH} == 1 ]
     then
         ## install gif_recorder
+	# TODO adapt that to Wayland
         pushd utils ; make
         popd
     fi
