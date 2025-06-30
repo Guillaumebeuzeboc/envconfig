@@ -39,6 +39,7 @@ alias s='sudo'
 alias fixsshtmux='export $(tmux showenv SSH_AUTH_SOCK)' # Need this first: ln -sf $SSH_AUTH_SOCK ~/.ssh/ssh_auth_sock
 alias szsh='source ~/.zshrc'
 alias gs='git status'
+alias n='nvim'
 #ROS
 alias tf='cd /var/tmp && rosrun tf view_frames && okular frames.pdf &'
 #translate shell
@@ -58,6 +59,13 @@ alias snappy-debug='sudo sysctl -w kernel.printk_ratelimit=0 ; journalctl --foll
 alias restart-plasma='plasmashell --replace &'
 # remove any snap/multipass vm
 alias nuke-multipass='multipass stop --all && multipass delete --all && multipass purge && sudo snap restart multipass'
+
+# LXD
+alias lxd-vm='echo "lxc launch ubuntu:24.04 vm-name --vm -c limits.cpu=8 -c limits.memory=8GiB -d root,size=40GiB"'
+alias lxd-desktop-vm='echo "lxc launch images:ubuntu/22.04/desktop ubuntu --vm -c limits.cpu=4 -c limits.memory=8GiB -d root,size=40GiB --console=vga"'
+
+# VSCode
+alias code='code --ozone-platform-hint=auto --enable-features=WaylandWindowDecorations'
 
 source ~/envconfig/ros_install.zsh
 source ~/envconfig/beuzclone.zsh
