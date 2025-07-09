@@ -18,6 +18,8 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
+PROMPT='[%D{%L:%M:%S}] '$PROMPT
+
 export EDITOR='vim'
 export WWW_HOME='google.co.fr'
 
