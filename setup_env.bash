@@ -83,6 +83,14 @@ then
     sym_link $FFDIR/userChrome.css userChrome.css
 fi
 
+echo "Should we install neovim?"
+yes_or_no
+if [ $? == 0 ]
+then
+    sudo snap install neovim --classic
+    sym_link ~/.config/nvim nvim
+fi
+
 echo "Do you want to install translate-shell?"
 yes_or_no
 if [ $? == 0 ]
