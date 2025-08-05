@@ -4,8 +4,8 @@ function scd {
   local directory_to_find="$1"
 
   if [[ -z "$directory_to_find" ]]; then
-    echo "Error: Please provide a directory name to find."
-    return 1
+    cd $(fdfind --type directory | fzf)
+    return
   fi
 
   local results=$(fdfind --type directory $directory_to_find)
