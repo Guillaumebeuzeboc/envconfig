@@ -89,11 +89,11 @@ if [ $? == 0 ]
 then
     sudo snap install neovim --classic
     sym_link ~/.config/nvim nvim
-    wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/UbuntuSans.zip -O /tmp/ubuntu.zip
+    wget https://github.com/ryanoasis/nerd-fonts/releases/download/latest/UbuntuMono.zip -O /tmp/ubuntu.zip
     mkdir -p ~/.local/share/fonts/NerdFonts/
     cd ~/local/share/fonts/NerdFonts
     unzip /tmp/ubuntu.zip
-    fc-cache -fv
+    fc-cache -fv ~/.local/share/fonts/NerdFonts
     cd ~/
 fi
 
