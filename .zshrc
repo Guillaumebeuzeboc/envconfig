@@ -69,6 +69,9 @@ alias lxd-desktop-vm='echo "lxc launch images:ubuntu/22.04/desktop ubuntu --vm -
 # VSCode
 alias code='code --ozone-platform-hint=auto --enable-features=WaylandWindowDecorations'
 
+# tmux
+bindkey -s ^f "/usr/local/bin/tmux-sessionizer\n"
+
 source ~/envconfig/ros_install.zsh
 source ~/envconfig/beuzclone.zsh
 source ~/envconfig/serial_monitor.zsh

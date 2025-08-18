@@ -68,6 +68,10 @@ if [ $? == 0 ]
 then
     sudo apt install -y tmux xclip
     sym_link ~/.tmux.conf .tmux.conf
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+    sudo wget https://raw.githubusercontent.com/ThePrimeagen/tmux-sessionizer/refs/heads/master/tmux-sessionizer -O /usr/local/bin/tmux-sessionizer
+    sudo chmod +x /usr/local/bin/tmux-sessionizer
+    sym_link ~/.config/tmux-sessionizer tmux-sessionizer
     echo "tmux config: Done!"
 fi
 
