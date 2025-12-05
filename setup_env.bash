@@ -101,6 +101,14 @@ then
     cd ~/
 fi
 
+echo "Do you want to configure OpenCode?"
+yes_or_no
+if [ $? == 0 ]
+then
+    sym_link ~/.config/opencode opencode
+    echo "OpenCode config: Done!"
+fi
+
 echo "Do you want to install translate-shell?"
 yes_or_no
 if [ $? == 0 ]
