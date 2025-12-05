@@ -1,6 +1,7 @@
 [user]
 	name = Guillaume beuzeboc
 	email = guillaume.beuzeboc@gmail.com
+	signingkey = 24CE61142F457D77
 [alias]
     lg= log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
     co = checkout
@@ -38,3 +39,5 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[format]
+	signoff = true
