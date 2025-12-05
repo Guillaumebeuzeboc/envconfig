@@ -82,3 +82,6 @@ source ~/envconfig/remote_snapcraft.zsh
 
 source ~/.custom.zsh
 
+
+# opencode
+export PATH=/home/guillaume.beuzeboc@canonical.com/.opencode/bin:$PATH
