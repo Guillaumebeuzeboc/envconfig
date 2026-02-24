@@ -75,6 +75,17 @@ then
     echo "tmux config: Done!"
 fi
 
+echo "Do you want to install atuin?"
+yes_or_no
+if [ $? == 0 ]
+then
+    sudo snap install atuin
+    sudo snap connect atuin:dot-zsh-history
+    SHELL=${SHELL} atuin import auto
+    echo 'eval "$(atuin init zsh)"' >> ~/.custom.zsh
+    echo "atuin config: Done!"
+fi
+
 echo "Should we personalize userChrome of FireFox?"
 yes_or_no
 if [ $? == 0 ]
