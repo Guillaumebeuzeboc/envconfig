@@ -82,7 +82,7 @@ then
     sudo snap install atuin
     sudo snap connect atuin:dot-zsh-history
     SHELL=${SHELL} atuin import auto
-    echo 'eval "$(atuin init zsh)"' >> ~/.custom.zsh
+    echo 'eval "$(atuin init zsh --disable-up-arrow)"' >> ~/.custom.zsh
     echo "atuin config: Done!"
 fi
 
