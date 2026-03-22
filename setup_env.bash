@@ -102,11 +102,11 @@ echo "Should we install neovim?"
 yes_or_no
 if [ $? == 0 ]
 then
-    sudo snap install neovim --classic
+    sudo snap install nvim --classic
     sym_link ~/.config/nvim nvim
-    wget https://github.com/ryanoasis/nerd-fonts/releases/download/latest/UbuntuMono.zip -O /tmp/ubuntu.zip
+    wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Ubuntu.zip -O /tmp/ubuntu.zip
     mkdir -p ~/.local/share/fonts/NerdFonts/
-    cd ~/local/share/fonts/NerdFonts
+    cd ~/.local/share/fonts/NerdFonts
     unzip /tmp/ubuntu.zip
     fc-cache -fv ~/.local/share/fonts/NerdFonts
     cd ~/
