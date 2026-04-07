@@ -1,6 +1,5 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "theme": "gruvbox",
   "autoupdate": true,
   "provider": {
     "github-copilot": {
@@ -17,5 +16,11 @@
         }
       }
     }
-  }
+  },
+  "mcp": {
+    "jira-mcp": {
+      "type": "remote",
+      "url": "https://mcp.atlassian.com/v1/mcp",
+    }
+  },
 }
