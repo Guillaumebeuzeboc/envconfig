@@ -17,5 +17,5 @@ Focus on:
 - User-friendly language
 
 All the written documentation should fit in the Diataxis framework.
-Also since you are writting for Canonical, make sure the follow: https://canonical.com/documentation
+Also since you are writing for Canonical, make sure the follow: https://canonical.com/documentation
 
