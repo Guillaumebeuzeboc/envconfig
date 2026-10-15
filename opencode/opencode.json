@@ -1,27 +1,13 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "autoupdate": true,
-  "provider": {
-    "github-copilot": {
-      "name": "GitHub Copilot",
-      "models": {
-        "gpt-4o": {
-          "name": "GPT-4o"
-        },
-        "gpt-4o-mini": {
-          "name": "GPT-4o Mini"
-        },
-        "claude-3.5-sonnet": {
-          "name": "Claude 3.5 Sonnet"
-        }
-      }
-    }
-  },
+  "update": "notify",
   "mcp": {
+    "servers": {
     "jira-mcp": {
       "type": "remote",
       "url": "https://mcp.atlassian.com/v1/mcp",
     }
   },
-  "plugin": ["opencode-mem"],
+    },
+  "plugins": ["opencode-mem@2.31.2"],
 }
