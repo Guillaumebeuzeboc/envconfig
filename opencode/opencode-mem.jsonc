@@ -93,7 +93,7 @@
    //   GitHub Copilot:            "opencodeProvider": "github-copilot",  "opencodeModel": "gpt-4o-mini"
    //
    "opencodeProvider": "github-copilot",
-   "opencodeModel": "gpt-5.3-codex",
+    "opencodeModel": "kimi-k3",
 
    // ============================================
    // Auto-Capture Settings
