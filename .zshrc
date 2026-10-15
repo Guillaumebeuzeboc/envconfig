@@ -84,7 +84,7 @@ source ~/.custom.zsh
 
 
 # opencode
-export PATH=/home/guillaume.beuzeboc@canonical.com/.opencode/bin:$PATH
+export PATH=/home/$USER/.opencode/bin:$PATH
 
-# opencode
-export PATH=/home/guillaume/.opencode/bin:$PATH
+export PATH="$HOME/.npm-global/bin:$PATH"
+
