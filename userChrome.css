@@ -9,3 +9,14 @@
 #sidebar-header {
     visibility: collapse;
 }
+
+/* Hide the newer Firefox extension sidebar header */
+*|*#sidebar-panel-header {
+    display: none !important;
+}
+
+/* Hide Firefox's sidebar launcher, but keep Tree Style Tab */
+#sidebar-container,
+#sidebar-launcher-splitter {
+    display: none !important;
+}
